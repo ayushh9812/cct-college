@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chitwan College of Technology (CCT) | TU Affiliated</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <!-- Top Bar -->
+    <div class="bg-blue-950 text-slate-200 text-xs sm:text-sm py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4 flex-wrap">
+                <span><i class="fas fa-map-marker-alt text-amber-400 mr-1"></i> Aastha Chowk, Bharatpur-12, Chitwan, Nepal</span>
+                <span><i class="fas fa-phone-alt text-amber-400 mr-1"></i> +977-56-590346, +977-56-535246</span>
+                <span><i class="fas fa-envelope text-amber-400 mr-1"></i> info@chitwancollege.edu.np</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="bg-amber-500 text-blue-950 font-bold px-2 py-0.5 rounded text-xs uppercase">TU Affiliated</span>
+                <button onclick="openAdminModal()" class="bg-amber-400 hover:bg-amber-300 text-blue-950 px-3 py-1 rounded font-semibold transition flex items-center gap-1 shadow">
+                    <i class="fas fa-lock text-xs"></i> Admin Portal
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#home" onclick="returnToHome(event)" class="flex items-center gap-3 cursor-pointer">
+                <div class="bg-blue-900 text-white w-10 h-10 rounded-lg flex items-center justify-center font-bold text-xl shadow-md">
+                    CCT
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg sm:text-xl text-blue-950 leading-tight">Chitwan College of Technology</h1>
+                    <p class="text-xs text-slate-500 font-medium">Tribhuvan University Affiliated</p>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-6 font-medium text-sm text-slate-700">
+                <a href="#home" class="hover:text-blue-900 transition">Home</a>
+                <a href="#about" class="hover:text-blue-900 transition">About Us</a>
+                <a href="#programs" class="hover:text-blue-900 transition">Programs</a>
+                <a href="#notices" class="hover:text-blue-900 transition">Notices</a>
+                <a href="#faculty" class="hover:text-blue-900 transition">Faculty</a>
+                <a href="#gallery" class="hover:text-blue-900 transition">Campus Life</a>
+                <a href="#contact" class="hover:text-blue-900 transition">Contact</a>
+            </nav>
+
+            <div class="flex items-center gap-2">
+                <button onclick="openInquiryModal()" class="bg-blue-900 hover:bg-blue-800 text-white text-sm font-semibold px-4 py-2 rounded-lg shadow transition hidden sm:inline-block">
+                    Apply Online
+                </button>
+                <button onclick="toggleMobileMenu()" class="md:hidden text-slate-700 p-2 focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-2">
+            <a href="#home" onclick="toggleMobileMenu(); returnToHome(event);" class="block py-2 text-slate-700 font-medium">Home</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-medium">About Us</a>
+            <a href="#programs" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-medium">Programs</a>
+            <a href="#notices" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-medium">Notices</a>
+            <a href="#faculty" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-medium">Faculty</a>
+            <a href="#gallery" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-medium">Campus Life</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-medium">Contact</a>
+            <button onclick="openInquiryModal(); toggleMobileMenu();" class="w-full bg-blue-900 text-white py-2 rounded-lg font-semibold mt-2">Apply Online</button>
+        </div>
+    </header>
+
+    <!-- Public Portal Content -->
+    <main id="public-website">
+        <!-- Hero Section -->
+        <section id="home" class="relative bg-gradient-to-r from-blue-950 via-blue-900 to-indigo-950 text-white py-20 px-4 overflow-hidden">
+            <div class="absolute inset-0 opacity-25 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px]"></div>
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+                <div class="space-y-6 text-center lg:text-left">
+                    <span class="bg-amber-400 text-blue-950 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+                        Welcome to CCT College
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Shape Your Future in <span class="text-amber-400">IT & Management</span>
+                    </h1>
+                    <p class="text-slate-300 text-lg max-w-xl mx-auto lg:mx-0">
+                        Chitwan College of Technology (CCT), located at Aastha Chowk, Bharatpur-12, Chitwan, offers cutting-edge Tribhuvan University programs designed to build tomorrow's industry leaders.
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+                        <a href="#programs" class="bg-amber-400 hover:bg-amber-300 text-blue-950 font-bold px-6 py-3 rounded-lg shadow-lg transition">
+                            Explore Programs
+                        </a>
+                        <a href="#contact" class="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold px-6 py-3 rounded-lg backdrop-blur transition">
+                            Visit Campus
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 shadow-2xl space-y-4">
+                        <h3 class="text-xl font-bold text-amber-400"><i class="fas fa-bullhorn mr-2"></i> Latest Notices</h3>
+                        <div id="hero-notice-ticker" class="space-y-3 max-h-72 overflow-y-auto pr-2">
+                            <!-- Injected dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Stats Banner -->
+        <section class="bg-white shadow-md relative z-20 max-w-6xl mx-auto -mt-8 rounded-xl p-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center border border-slate-100">
+            <div>
+                <p class="text-3xl font-extrabold text-blue-900">750+</p>
+                <p class="text-xs sm:text-sm text-slate-500 font-medium">Active Students</p>
+            </div>
+            <div>
+                <p class="text-3xl font-extrabold text-blue-900">45+</p>
+                <p class="text-xs sm:text-sm text-slate-500 font-medium">Expert Faculty</p>
+            </div>
+            <div>
+                <p class="text-3xl font-extrabold text-blue-900">100%</p>
+                <p class="text-xs sm:text-sm text-slate-500 font-medium">TU Curriculum</p>
+            </div>
+            <div>
+                <p class="text-3xl font-extrabold text-blue-900">15+ yrs</p>
+                <p class="text-xs sm:text-sm text-slate-500 font-medium">Academic Excellence</p>
+            </div>
+        </section>
+
+        <!-- About Principal Section -->
+        <section id="about" class="py-20 px-4 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 relative">
+                    <div class="bg-blue-900 rounded-2xl p-2 shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Principal" class="rounded-xl w-full h-[400px] object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-amber-400 text-blue-950 p-4 rounded-xl shadow-lg border-4 border-white font-bold text-center">
+                        <p class="text-2xl">15+</p>
+                        <p class="text-xs uppercase">Years of Trust</p>
+                    </div>
+                </div>
+                <div class="lg:col-span-7 space-y-6">
+                    <h2 class="text-3xl font-extrabold text-blue-950">Message from the Principal</h2>
+                    <p class="text-slate-600 leading-relaxed">
+                        Welcome to Chitwan College of Technology (CCT). Situated in the heart of Bharatpur at Aastha Chowk, our institution is dedicated to empowering students with professional technical expertise, critical thinking, and moral values. We maintain rigorous Tribhuvan University standards combined with modern practical skill workshops.
+                    </p>
+                    <div class="border-l-4 border-amber-500 pl-4 py-2 italic text-slate-700">
+                        "Our goal is not just to prepare graduates for jobs, but to cultivate innovators and leaders who drive the technological and managerial landscape forward."
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-blue-950 text-lg">Mr. Dhruba Babu Joshi</h4>
+                        <p class="text-sm text-slate-500">Principal, Chitwan College of Technology</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic Programs -->
+        <section id="programs" class="py-20 px-4 bg-slate-100">
+            <div class="max-w-7xl mx-auto space-y-12">
+                <div class="text-center space-y-3 max-w-2xl mx-auto">
+                    <span class="text-blue-900 font-bold text-sm tracking-wider uppercase bg-blue-100 px-3 py-1 rounded-full">TU Affiliated Courses</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-950">Academic Programs Offered</h2>
+                    <p class="text-slate-600">Choose from premier four-year bachelor programs designed according to Tribhuvan University guidelines.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Program 1 -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200 hover:shadow-xl transition flex flex-col justify-between">
+                        <div>
+                            <div class="bg-blue-900 p-6 text-white">
+                                <span class="bg-amber-400 text-blue-950 text-xs font-bold px-2.5 py-1 rounded">4 Years / 8 Semesters</span>
+                                <h3 class="text-2xl font-bold mt-3">BSc. CSIT</h3>
+                                <p class="text-xs text-blue-200 mt-1">Bachelor of Science in Computer Science & IT</p>
+                            </div>
+                            <div class="p-6 space-y-4 text-sm text-slate-600">
+                                <p>Comprehensive curriculum covering advanced programming, algorithms, artificial intelligence, networking, and software engineering.</p>
+                                <ul class="space-y-2">
+                                    <li><i class="fas fa-check text-emerald-600 mr-2"></i> High-tech Computer Labs</li>
+                                    <li><i class="fas fa-check text-emerald-600 mr-2"></i> Practical Project Work & Internships</li>
+                                    <li><i class="fas fa-check text-emerald-600 mr-2"></i> Experienced IT Professors</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="openInquiryModal()" class="w-full bg-blue-900 hover:bg-blue-800 text-white font-semibold py-2.5 rounded-lg transition">Enquire Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Program 2 -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200 hover:shadow-xl transition flex flex-col justify-between">
+                        <div>
+                            <div class="bg-blue-900 p-6 text-white">
+                                <span class="bg-amber-400 text-blue-950 text-xs font-bold px-2.5 py-1 rounded">4 Years / 8 Semesters</span>
+                                <h3 class="text-2xl font-bold mt-3">BCA</h3>
+                                <p class="text-xs text-blue-200 mt-1">Bachelor of Computer Application</p>
+                            </div>
+                            <div class="p-6 space-y-4 text-sm text-slate-600">
+                                <p>Focuses on software development, database administration, web technologies, and modern system analysis for corporate environments.</p>
+                                <ul class="space-y-2">
+                                    <li><i class="fas fa-check text-emerald-600 mr-2"></i> Web & Mobile Dev Focus</li>
+                                    <li><i class="fas fa-check text-emerald-600 mr-2"></i> Industry Seminars & Workshops</li>
+                                    <li><i class="fas fa-check text-emerald-600 mr-2"></i> Strong Placement Support</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="openInquiryModal()" class="w-full bg-blue-900 hover:bg-blue-800 text-white font-semibold py-2.5 rounded-lg transition">Enquire Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Program 3 -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200 hover:shadow-xl transition flex flex-col justify-between">
+                        <div>
+                            <div class="bg-blue-900 p-6 text-white">
+                                <span class="bg-amber-400 text-blue-950 text-xs font-bold px-2.5 py-1 rounded">4 Years / 8 Semesters</span>
+                                <h3 class="text-2xl font-bold mt-3">BITM / BIM</h3>
+                                <p class="text-xs text-blue-200 mt-1">Bachelor of Information Technology Management</p>
+                            </div>
+                            <div class="p-6 space-y-4 text-sm text-slate-600">
+                                <p>Combines cutting-edge information technology with modern business administration, preparing students for executive and IT management roles.</p>
+                                <ul class="space-y-2">
+                                    <li><i class="fas fa-check text-emerald-600 mr-2"></i> Dual IT & Business Skills</li>
+                                    <li><i class="fas fa-check text-emerald-600 mr-2"></i> Business Intelligence Training</li>
+                                    <li><i class="fas fa-check text-emerald-600 mr-2"></i> Leadership Development</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="openInquiryModal()" class="w-full bg-blue-900 hover:bg-blue-800 text-white font-semibold py-2.5 rounded-lg transition">Enquire Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Notice Board Section -->
+        <section id="notices" class="py-20 px-4 max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
+                <div>
+                    <span class="text-blue-900 font-bold text-sm tracking-wider uppercase bg-blue-100 px-3 py-1 rounded-full">Updates & Circulars</span>
+                    <h2 class="text-3xl font-extrabold text-blue-950 mt-2">Official Notice Board</h2>
+                </div>
+                <p class="text-slate-500 text-sm">Stay up-to-date with exam schedules, results, and college events.</p>
+            </div>
+
+            <div id="public-notice-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Dynamically populated from JS -->
+            </div>
+        </section>
+
+        <!-- Faculty & Staff Directory -->
+        <section id="faculty" class="py-20 px-4 bg-slate-100">
+            <div class="max-w-7xl mx-auto space-y-12">
+                <div class="text-center space-y-3 max-w-2xl mx-auto">
+                    <span class="text-blue-900 font-bold text-sm tracking-wider uppercase bg-blue-100 px-3 py-1 rounded-full">Our Mentors</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-950">Faculty & Leadership Directory</h2>
+                    <p class="text-slate-600">Dedicated academicians and industry experts committed to student excellence.</p>
+                </div>
+
+                <div id="public-faculty-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Dynamically populated from JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Campus Gallery & Life -->
+        <section id="gallery" class="py-20 px-4 max-w-7xl mx-auto">
+            <div class="text-center space-y-3 max-w-2xl mx-auto mb-12">
+                <span class="text-blue-900 font-bold text-sm tracking-wider uppercase bg-blue-100 px-3 py-1 rounded-full">Campus Life</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-950">Explore CCT Facilities</h2>
+                <p class="text-slate-600">State-of-the-art computer labs, spacious library, and vibrant student activities.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="relative group overflow-hidden rounded-2xl shadow-md h-64">
+                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80" alt="Lab" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-transparent flex items-end p-6">
+                        <h4 class="text-white font-bold text-lg">Advanced Computer Labs</h4>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-2xl shadow-md h-64">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" alt="Students" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-transparent flex items-end p-6">
+                        <h4 class="text-white font-bold text-lg">Collaborative Study Spaces</h4>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-2xl shadow-md h-64">
+                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80" alt="Library" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-transparent flex items-end p-6">
+                        <h4 class="text-white font-bold text-lg">Resource Library</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location & Map Section -->
+        <section id="contact" class="py-20 px-4 bg-slate-900 text-white">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="bg-amber-400 text-blue-950 font-bold text-xs uppercase tracking-wider px-3 py-1 rounded-full">Get In Touch</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold">Visit Our Campus in Chitwan</h2>
+                    <p class="text-slate-300">
+                        Drop by our campus or reach out through our official communication channels for admissions, admissions status, and fee structures.
+                    </p>
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-blue-800 text-amber-400 w-10 h-10 rounded-lg flex items-center justify-center shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Location</h4>
+                                <p class="text-slate-300 text-sm">Aastha Chowk, Bharatpur-12, Chitwan, Nepal</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-blue-800 text-amber-400 w-10 h-10 rounded-lg flex items-center justify-center shrink-0">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Phone Numbers</h4>
+                                <p class="text-slate-300 text-sm">+977-56-590346, +977-56-535246, +977-9705590346</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-blue-800 text-amber-400 w-10 h-10 rounded-lg flex items-center justify-center shrink-0">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Email Address</h4>
+                                <p class="text-slate-300 text-sm">info@chitwancollege.edu.np</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="rounded-2xl overflow-hidden shadow-2xl border-2 border-slate-700 h-[380px]">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.846431985959!2d84.4300!3d27.6800!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3994fb8c973a5a7b%3A0x6b819f7e8a3a2d2!2sAastha%20Chowk%2C%20Bharatpur%2012%2C%20Chitwan!5e0!3m2!1sen!2snp!4v1650000000000!5m2!1sen!2snp" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                    <a href="https://maps.google.com/?q=Aastha+Chowk,+Bharatpur-12,+Chitwan" target="_blank" class="block w-full bg-amber-400 hover:bg-amber-300 text-blue-950 text-center font-bold py-3 rounded-lg shadow transition">
+                        <i class="fas fa-directions mr-2"></i> Get Driving Directions on Google Maps
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Admin Portal Dashboard (Hidden by default) -->
+    <div id="admin-dashboard" class="hidden min-h-screen bg-slate-100 flex flex-col">
+        <!-- Admin Header -->
+        <header class="bg-blue-950 text-white shadow-md px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="bg-amber-400 text-blue-950 font-bold px-3 py-1 rounded text-sm">CCT ADMIN</div>
+                <h1 class="font-bold text-lg hidden sm:inline-block">Management Dashboard</h1>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="text-sm text-slate-300">Logged in as <strong class="text-amber-400">ayush</strong></span>
+                <button onclick="logoutAdmin()" class="bg-red-600 hover:bg-red-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition">
+                    <i class="fas fa-sign-out-alt mr-1"></i> Logout
+                </button>
+            </div>
+        </header>
+
+        <!-- Admin Navigation Tabs -->
+        <div class="bg-white border-b border-slate-200 px-6 py-3 flex gap-2 overflow-x-auto">
+            <button onclick="switchAdminTab('overview')" class="admin-tab-btn active px-4 py-2 rounded-lg font-semibold text-sm transition">Overview</button>
+            <button onclick="switchAdminTab('students')" class="admin-tab-btn px-4 py-2 rounded-lg font-semibold text-sm transition">Students Manager</button>
+            <button onclick="switchAdminTab('inquiries')" class="admin-tab-btn px-4 py-2 rounded-lg font-semibold text-sm transition">Inquiries <span id="admin-inquiry-badge" class="ml-1 bg-amber-500 text-blue-950 px-1.5 py-0.2 rounded-full text-xs font-bold">0</span></button>
+            <button onclick="switchAdminTab('faculty')" class="admin-tab-btn px-4 py-2 rounded-lg font-semibold text-sm transition">Faculty & Staff</button>
+            <button onclick="switchAdminTab('financials')" class="admin-tab-btn px-4 py-2 rounded-lg font-semibold text-sm transition">Fee & Financials</button>
+            <button onclick="switchAdminTab('notices')" class="admin-tab-btn px-4 py-2 rounded-lg font-semibold text-sm transition">Notice Publisher</button>
+        </div>
+
+        <!-- Admin Tab Content Body -->
+        <div class="max-w-7xl w-full mx-auto p-6 flex-grow space-y-6">
+            
+            <!-- TAB 1: OVERVIEW -->
+            <div id="tab-overview" class="admin-tab-content space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                        <p class="text-slate-500 text-sm font-medium">Total Students</p>
+                        <h3 id="stat-total-students" class="text-3xl font-extrabold text-blue-950 mt-2">0</h3>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                        <p class="text-slate-500 text-sm font-medium">Faculty & Staff</p>
+                        <h3 id="stat-total-staff" class="text-3xl font-extrabold text-blue-950 mt-2">0</h3>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                        <p class="text-slate-500 text-sm font-medium">Total Fees Collected</p>
+                        <h3 id="stat-total-revenue" class="text-3xl font-extrabold text-emerald-600 mt-2">Rs. 0</h3>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                        <p class="text-slate-500 text-sm font-medium">Pending Dues</p>
+                        <h3 id="stat-total-dues" class="text-3xl font-extrabold text-rose-600 mt-2">Rs. 0</h3>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                        <h3 class="font-bold text-lg text-blue-950 mb-4">Students by Program</h3>
+                        <div class="h-64 flex justify-center">
+                            <canvas id="programChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                        <h3 class="font-bold text-lg text-blue-950 mb-4">Financial Status Overview</h3>
+                        <div class="h-64 flex justify-center">
+                            <canvas id="financeChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: STUDENTS -->
+            <div id="tab-students" class="admin-tab-content hidden space-y-6">
+                <div class="flex flex-col sm:flex-row justify-between items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-slate-200">
+                    <input type="text" id="student-search" oninput="filterStudents()" placeholder="Search by student name or ID..." class="w-full sm:w-80 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900">
+                    <button onclick="openStudentModal()" class="w-full sm:w-auto bg-blue-900 hover:bg-blue-800 text-white font-semibold px-4 py-2 rounded-lg transition">
+                        <i class="fas fa-plus mr-1"></i> Add New Student
+                    </button>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-700 text-xs uppercase tracking-wider border-b">
+                                <th class="p-4">ID</th>
+                                <th class="p-4">Student Name</th>
+                                <th class="p-4">Program</th>
+                                <th class="p-4">Semester</th>
+                                <th class="p-4">Fee Status</th>
+                                <th class="p-4 text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="student-table-body" class="divide-y text-sm text-slate-700">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- TAB 3: INQUIRIES -->
+            <div id="tab-inquiries" class="admin-tab-content hidden space-y-6">
+                <!-- Populated by JS -->
+            </div>
+
+            <!-- TAB 4: FACULTY -->
+            <div id="tab-faculty" class="admin-tab-content hidden space-y-6">
+                <div class="flex justify-between items-center bg-white p-4 rounded-xl shadow-sm border border-slate-200">
+                    <h3 class="font-bold text-lg text-blue-950">Faculty Directory Manager</h3>
+                    <button onclick="openFacultyModal()" class="bg-blue-900 hover:bg-blue-800 text-white font-semibold px-4 py-2 rounded-lg transition">
+                        <i class="fas fa-plus mr-1"></i> Add Faculty
+                    </button>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-700 text-xs uppercase tracking-wider border-b">
+                                <th class="p-4">Name</th>
+                                <th class="p-4">Designation</th>
+                                <th class="p-4">Department</th>
+                                <th class="p-4">Email</th>
+                                <th class="p-4 text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="faculty-table-body" class="divide-y text-sm text-slate-700">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- TAB 5: FINANCIALS -->
+            <div id="tab-financials" class="admin-tab-content hidden space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 space-y-4">
+                    <h3 class="font-bold text-lg text-blue-950">Fee Ledger & Payment Tracking</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100 text-slate-700 text-xs uppercase tracking-wider border-b">
+                                    <th class="p-4">Student Name</th>
+                                    <th class="p-4">Program</th>
+                                    <th class="p-4">Total Fee (Rs.)</th>
+                                    <th class="p-4">Paid (Rs.)</th>
+                                    <th class="p-4">Due (Rs.)</th>
+                                    <th class="p-4 text-center">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="finance-table-body" class="divide-y text-sm text-slate-700">
+                                <!-- Populated by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 6: NOTICES -->
+            <div id="tab-notices" class="admin-tab-content hidden space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 space-y-4">
+                    <h3 class="font-bold text-lg text-blue-950">Publish Notice / Circular</h3>
+                    <form onsubmit="handlePublishNotice(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-semibold mb-1">Notice Title</label>
+                            <input type="text" id="notice-title-input" required class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-900">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-1">Notice Content</label>
+                            <textarea id="notice-content-input" rows="4" required class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-900"></textarea>
+                        </div>
+                        <button type="submit" class="bg-blue-900 hover:bg-blue-800 text-white font-semibold px-6 py-2 rounded-lg transition">Publish Notice</button>
+                    </form>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 space-y-4">
+                    <h3 class="font-bold text-lg text-blue-950">Active Notices</h3>
+                    <div id="admin-notice-list" class="space-y-3">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Admin Login Modal -->
+    <div id="admin-login-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-2xl max-w-md w-full p-8 shadow-2xl relative space-y-6">
+            <button onclick="closeAdminModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700"><i class="fas fa-times text-xl"></i></button>
+            <div class="text-center space-y-2">
+                <div class="bg-blue-900 text-amber-400 w-12 h-12 rounded-xl flex items-center justify-center mx-auto text-xl font-bold shadow">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-blue-950">Admin Portal Login</h3>
+                <p class="text-xs text-slate-500">Enter credentials to manage CCT College portal</p>
+            </div>
+
+            <form onsubmit="handleAdminLogin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-slate-600 mb-1">Username</label>
+                    <input type="text" id="admin-user-input" required placeholder="Enter username" class="w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-blue-900">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-slate-600 mb-1">Password</label>
+                    <input type="password" id="admin-pass-input" required placeholder="Enter password" class="w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-blue-900">
+                </div>
+                <p id="login-error-msg" class="text-rose-600 text-xs hidden">Invalid username or password.</p>
+                <button type="submit" class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 rounded-lg shadow transition">Login to Dashboard</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Student Add/Edit Modal -->
+    <div id="student-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative space-y-4">
+            <h3 id="student-modal-title" class="text-xl font-bold text-blue-950">Add Student Record</h3>
+            <form id="student-form" onsubmit="saveStudent(event)" class="space-y-3">
+                <input type="hidden" id="student-edit-id">
+                <div>
+                    <label class="block text-xs font-semibold mb-1">Full Name</label>
+                    <input type="text" id="modal-student-name" required class="w-full px-3 py-2 border rounded-lg">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold mb-1">Program</label>
+                    <select id="modal-student-program" class="w-full px-3 py-2 border rounded-lg">
+                        <option value="BSc. CSIT">BSc. CSIT</option>
+                        <option value="BCA">BCA</option>
+                        <option value="BITM / BIM">BITM / BIM</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold mb-1">Semester</label>
+                    <select id="modal-student-semester" class="w-full px-3 py-2 border rounded-lg">
+                        <option value="1st Semester">1st Semester</option>
+                        <option value="2nd Semester">2nd Semester</option>
+                        <option value="3rd Semester">3rd Semester</option>
+                        <option value="4th Semester">4th Semester</option>
+                        <option value="5th Semester">5th Semester</option>
+                        <option value="6th Semester">6th Semester</option>
+                        <option value="7th Semester">7th Semester</option>
+                        <option value="8th Semester">8th Semester</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold mb-1">Total Fee (Rs.)</label>
+                    <input type="number" id="modal-student-fee" required value="350000" class="w-full px-3 py-2 border rounded-lg">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold mb-1">Paid Fee (Rs.)</label>
+                    <input type="number" id="modal-student-paid" required value="150000" class="w-full px-3 py-2 border rounded-lg">
+                </div>
+                <div class="flex justify-end gap-2 pt-2">
+                    <button type="button" onclick="closeStudentModal()" class="px-4 py-2 bg-slate-200 rounded-lg font-semibold text-sm">Cancel</button>
+                    <button type="submit" class="px-4 py-2 bg-blue-900 text-white rounded-lg font-semibold text-sm">Save Student</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Faculty Add Modal -->
+    <div id="faculty-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative space-y-4">
+            <h3 class="text-xl font-bold text-blue-950">Add Faculty Member</h3>
+            <form onsubmit="saveFaculty(event)" class="space-y-3">
+                <div>
+                    <label class="block text-xs font-semibold mb-1">Full Name</label>
+                    <input type="text" id="modal-faculty-name" required class="w-full px-3 py-2 border rounded-lg">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold mb-1">Designation</label>
+                    <input type="text" id="modal-faculty-role" required placeholder="Professor / Lecturer" class="w-full px-3 py-2 border rounded-lg">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold mb-1">Department</label>
+                    <input type="text" id="modal-faculty-dept" required placeholder="CSIT / BCA" class="w-full px-3 py-2 border rounded-lg">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold mb-1">Email</label>
+                    <input type="email" id="modal-faculty-email" required class="w-full px-3 py-2 border rounded-lg">
+                </div>
+                <div class="flex justify-end gap-2 pt-2">
+                    <button type="button" onclick="closeFacultyModal()" class="px-4 py-2 bg-slate-200 rounded-lg font-semibold text-sm">Cancel</button>
+                    <button type="submit" class="px-4 py-2 bg-blue-900 text-white rounded-lg font-semibold text-sm">Save Faculty</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Student Enquiry Form Modal -->
+    <div id="inquiry-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-8 shadow-2xl relative space-y-6">
+            <button onclick="closeInquiryModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700"><i class="fas fa-times text-xl"></i></button>
+            <div class="space-y-1">
+                <h3 class="text-2xl font-bold text-blue-950">Online Admission Inquiry</h3>
+                <p class="text-xs text-slate-500">Fill in your details and our admission counselor will contact you.</p>
+            </div>
+            <form id="inquiry-form" onsubmit="handleInquirySubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold uppercase mb-1">Full Name</label>
+                    <input type="text" id="inquiry-name" required class="w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-blue-900" placeholder="Enter your full name">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase mb-1">Phone Number</label>
+                    <input type="tel" id="inquiry-phone" required class="w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-blue-900" placeholder="Enter phone number">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase mb-1">Preferred Program</label>
+                    <select id="inquiry-program" class="w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-blue-900">
+                        <option value="BSc. CSIT">BSc. CSIT</option>
+                        <option value="BCA">BCA</option>
+                        <option value="BITM / BIM">BITM / BIM</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 rounded-lg shadow transition">Submit Inquiry</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-blue-950 text-slate-300 py-12 px-4 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div class="space-y-4">
+                <h3 class="text-white font-bold text-lg">Chitwan College of Technology</h3>
+                <p class="text-sm text-slate-400">Affiliated to Tribhuvan University. Premier institution for technical and management education in Chitwan.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#about" class="hover:text-amber-400 transition">About CCT</a></li>
+                    <li><a href="#programs" class="hover:text-amber-400 transition">Academic Programs</a></li>
+                    <li><a href="#notices" class="hover:text-amber-400 transition">Notice Board</a></li>
+                    <li><a href="#faculty" class="hover:text-amber-400 transition">Faculty Directory</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Programs</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#programs" class="hover:text-amber-400 transition">BSc. CSIT</a></li>
+                    <li><a href="#programs" class="hover:text-amber-400 transition">BCA</a></li>
+                    <li><a href="#programs" class="hover:text-amber-400 transition">BITM / BIM</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Contact Info</h4>
+                <p class="text-sm text-slate-400 mb-2"><i class="fas fa-map-marker-alt text-amber-400 mr-2"></i> Aastha Chowk, Bharatpur-12, Chitwan</p>
+                <p class="text-sm text-slate-400 mb-2"><i class="fas fa-phone-alt text-amber-400 mr-2"></i> +977-56-590346</p>
+                <p class="text-sm text-slate-400"><i class="fas fa-envelope text-amber-400 mr-2"></i> info@chitwancollege.edu.np</p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto pt-6 border-t border-slate-800 text-center text-xs text-slate-500">
+            &copy; 2026 Chitwan College of Technology (CCT). All rights reserved. Designed for Excellence.
+        </div>
+    </footer>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>
